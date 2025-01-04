@@ -1,37 +1,29 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Navbar, Nav } from "react-bootstrap";
 
 function NavigationBar() {
     return (
-        <nav className="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
-            <div className="container-fluid">
-                <a className="navbar-brand text-danger" href="#">Marvel</a>
-                <button className="navbar-toggler bg-info border" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggle-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item mx-2">
-                            <NavLink to='/' className='nav-link' activeclassname='active'>Home</NavLink>
-                        </li>
-                    </ul>
-                    <ul className="navbar-nav">
-                        <li className="nav-item mx-2">
-                            <NavLink to='/browse-characters' className='nav-link' activeclassname='active'>Browse Characters</NavLink>
-                        </li>
-                    </ul>
-                    <ul className="navbar-nav">
-                        <li className="nav-item mx-2">
-                            <NavLink to='/character-details/1017100' className='nav-link' activeclassname='active'>Character Details</NavLink>
-                        </li>
-                    </ul>
-                    <ul className="navbar-nav">
-                        <li className="nav-item mx-2">
-                        <NavLink to='/comics' className='nav-link' activeclassname='active'>Comics</NavLink>
-                        </li>
-                    </ul>
-                </div> 
-            </div>
-        </nav>
+        <Navbar bg="primary" expand="md"> 
+            <Navbar.Brand href="/" className="text-danger">Marvel</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                    <Nav.Link as={NavLink} to="/" activeclassname="active" className="mx-2 px-3 py-2 rounded" style={{ backgroundColor: 'white' }}>
+                    Home
+                    </Nav.Link>
+                    <Nav.Link as={NavLink} to="/browse-characters" activeclassname="active" className="mx-2 px-3 py-2 rounded" style={{ backgroundColor: 'white' }}>
+                    Browse Characters
+                    </Nav.Link>
+                    <Nav.Link as={NavLink} to="/character-details" activeclassname="active" className="mx-2 px-3 py-2 rounded" style={{ backgroundColor: 'white' }}>
+                    Character Details
+                    </Nav.Link>
+                    <Nav.Link as={NavLink} to="/comics" activeclassname="active" className="mx-2 px-3 py-2 rounded" style={{ backgroundColor: 'white' }}>
+                    Comics
+                    </Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+        // <NavLink to='/character-details/1017100' className='nav-link' activeclassname='active'>Character Details</NavLink>
     );
 }
 

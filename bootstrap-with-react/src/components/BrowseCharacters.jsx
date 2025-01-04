@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
-import CharacterDetail from './CharacterDetail';
 import CryptoJS from 'crypto-js';
 import { privateKey, publicKey } from '../config/keys';
 
@@ -10,7 +9,6 @@ import { privateKey, publicKey } from '../config/keys';
 
 const BrowseCharacters = () => {
     const [characters, setCharacters] = useState([]);
-    // const [selectedCharacterId, setSelectedCharacterId] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -43,7 +41,6 @@ const BrowseCharacters = () => {
                     </div>
                 ))}
             </div>
-            {/* {selectedCharacterId && <CharacterDetail characterId={selectedCharacterId} />} */}
         </div>
     );
 };

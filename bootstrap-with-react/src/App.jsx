@@ -6,13 +6,14 @@ import BrowseCharacters from './components/BrowseCharacters';
 import CharacterDetail from './components/CharacterDetail';
 import Comics from './components/Comics';
 import NavigationBar from './components/NavigationBar';
+import { Button, Form, Alert, Container, Modal } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
 const App = () => {
     return (
-        <div className='container'>
+        <Container fluid className='p-0'>
             <NavigationBar />
             <Routes>
               <Route path='/' element={<HomePage />} />
@@ -21,7 +22,7 @@ const App = () => {
               <Route path='/comics' element={<Comics />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
-        </div>
+        </Container>
     );
 };
 
